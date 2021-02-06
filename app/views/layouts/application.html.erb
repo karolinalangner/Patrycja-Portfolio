@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PatrycjaPortfolio</title>
+    <title>Patrycja Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,68 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!--NAVBAR -->
+    <div class="navbar" id="navbar">
+
+      <%= link_to(image_tag("logo.png", crop: :fill, class: "logo"), root_path) %>
+      <div class="social">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="navbar-menu" >
+        <%= link_to "O mnie", o_mnie_path, class: "btn menu-item" %>
+        <%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path, class: "btn menu-item" %>
+        <div class="dropdown">
+          <button class="btn menu-item dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Portfolio
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <%= link_to "Kategoria 1", "#", class:"dropdown-item" %>
+            <%= link_to "Kategoria 2", "#", class:"dropdown-item" %>
+          </div>
+        </div>
+        <%= link_to "Oferta", oferta_path, class: "btn menu-item" %>
+        <%= link_to "Blog", articles_path, class: "btn menu-item" %>
+        <%= link_to "Kontakt", kontakt_path, class: "btn menu-item" %>
+      </div>
+    </div>
+  <!--  container -->
+
+  <div class="container" style="padding-top: 10px; margin-top: 280px; height: 50vh; background-color: rgba(255, 255, 255, 0.5);">
+  
+  <span></span>
+      <%= yield %>
+  </div>
+
+  <!-- footer -->
+
+  <div class="footer">
+    <div class="columns">
+      <div class="contact mt-1">
+        <p>PATRYCJA HAMPELSKA <br>COPYWRITING, EDYTORSTWO I TRANSKRYPCJE </p>
+        <p><i class="fas fa-phone-alt"></i> 0044589854412</p>
+        <p><i class="fas fa-at"></i> abcabc@mail.com</p>
+      </div>
+      <div class="page-map mt-1">
+        <ul>
+          <p><u>Na skróty</u></p>
+          <li><%= link_to "O mnie", o_mnie_path %></li>
+          <li><%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path %></li>
+          <li><%= link_to "Oferta", oferta_path %></li>
+          <li><%= link_to "Blog", articles_path %></li>
+        </ul>
+      </div>
+      <div class="page-map mt-1"> 
+        <ul>
+          <p><u>Portfolio</u></p>
+          <li><%= link_to "Kategoria","#" %></li>
+          <li><%= link_to "Kolejna kategoria", "#" %></li>
+          <li><%= link_to "Kolejna kategoria", "#" %></li>
+        </ul>
+      </div>
+    </div>
+    <div><p class="text-center p-0 mt-4"><small>&copy; 2021 <%= link_to "Karolina Langner", "https://karolinalangner.me" %></small></p></div>
+  </div>
+
   </body>
 </html>
