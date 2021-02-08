@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
-<%= @article.title %>
-<%= @article.rich_body %>
+
+<p class="text-center"><small><%= @article.created_at.strftime("%d/%m/%Y") %></small></p>
+
+<h3 class="text-center"><%= @article.title %></h3>
+
+<div class="cover text-center">
+  <% if @article.cover.attached? %>
+    <%= cl_image_tag @article.cover.key, height: 400, crop: :fill %>
+  <% end %>
+</div>
+<p class="text text-center"><%= @article.rich_body %> </p>
 <div>
   <%= link_to 'Edit', edit_article_path(@article) %> |
   <%= link_to 'Back', articles_path %>
