@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :articles
+  devise_for :users
   root to: 'pages#home'
+  
+  resources :articles
+
   get 'o_mnie', to: 'pages#o_mnie'
   get 'kontakt', to: 'pages#kontakt'
   get 'dlaczego_warto_zaufac', to: 'pages#dlaczego_warto_zaufac'

@@ -33,12 +33,13 @@
           </div>
         </div>
         <%= link_to "Oferta", oferta_path, class: "btn menu-item" %>
-        <%= link_to "Blog", "#", class: "btn menu-item" %>
+        <%= link_to "Blog", articles_path, class: "btn menu-item" %>
         <%= link_to "Kontakt", kontakt_path, class: "btn menu-item" %>
       </div>
     </div>
   <!--  container -->
-
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <div class="container" style="padding-top: 10px; margin-top: 280px; min-height: 50vh; background-color: rgba(255, 255, 255, 0.5);">
   
   <span></span>
@@ -60,7 +61,7 @@
           <li><%= link_to "O mnie", o_mnie_path %></li>
           <li><%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path %></li>
           <li><%= link_to "Oferta", oferta_path %></li>
-          <li><%= link_to "Blog", "#" %></li>
+          <li><%= link_to "Blog", articles_path %></li>
         </ul>
       </div>
       <div class="page-map mt-1"> 
@@ -71,8 +72,24 @@
           <li><%= link_to "Kolejna kategoria", "#" %></li>
         </ul>
       </div>
+      <div class="page-map mt-1"> 
+        <ul>
+          <p><u>Ostatnio na blogu</u></p>
+          <% articles = Article.all %>
+          <% articles.last(3).sort.reverse.each do |article| %>
+          <li><%= link_to article.title, article %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div><p class="text-center p-0 mt-4"><small>&copy; 2021 <%= link_to "Karolina Langner", "https://karolinalangner.me" %></small></p></div>
+    <div>
+      <% if user_signed_in? %>
+        <p class="text-center"><%= link_to "Wyloguj", destroy_user_session_path, method: :delete %> </p>
+        <p class="text-center"><%= link_to "Dodaj referencje", "#" %> </p>
+        <p class="text-center"><%= link_to "Aktualizuj portfolio", "#" %> </p>
+      <% end %>
+    </div>
   </div>
 
   </body>
