@@ -33,13 +33,13 @@
           </div>
         </div>
         <%= link_to "Oferta", oferta_path, class: "btn menu-item" %>
-        <%= link_to "Blog", articles_path, class: "btn menu-item" %>
+        <%= link_to "Blog", "#", class: "btn menu-item" %>
         <%= link_to "Kontakt", kontakt_path, class: "btn menu-item" %>
       </div>
     </div>
   <!--  container -->
 
-  <div class="container" style="padding-top: 10px; margin-top: 280px; height: 50vh; background-color: rgba(255, 255, 255, 0.5);">
+  <div class="container" style="padding-top: 10px; margin-top: 280px; min-height: 50vh; background-color: rgba(255, 255, 255, 0.5);">
   
   <span></span>
       <%= yield %>
@@ -60,7 +60,7 @@
           <li><%= link_to "O mnie", o_mnie_path %></li>
           <li><%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path %></li>
           <li><%= link_to "Oferta", oferta_path %></li>
-          <li><%= link_to "Blog", articles_path %></li>
+          <li><%= link_to "Blog", "#" %></li>
         </ul>
       </div>
       <div class="page-map mt-1"> 
