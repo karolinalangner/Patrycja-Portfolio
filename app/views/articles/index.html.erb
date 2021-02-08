@@ -2,27 +2,29 @@
 
 <h2>Blog</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <div class="cards">
+  <div class="articles container">
     <% @articles.each do |article| %>
-      <div>
-       <h3> <%= link_to article.title, article %> </h3>
-       <%= article.rich_body %>
-      </div>
-        <% if user_signed_in? %>
-          <%= link_to 'Edytuj', edit_article_path(article), class: "btn" %>
-          <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn" %>
+      <div class="card-article">
+        <% if article.cover.attached? %>
+          <%= cl_image_tag article.cover.key, width: 400, height: 250, crop: :fill %>
         <% end %>
+        <h3><%= link_to article.title, article, class:"article-title" %></h3>
+        <small><%= article.created_at.strftime("%d/%m/%Y") %></small>
+      
+      <% if user_signed_in? %>
+      <div>
+        <%= link_to 'Edytuj', edit_article_path(article) %>
+        <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Na pewno?' } %>
+      </div>
+      <% end %>
     
-    <% end %>
+    
+      </div>  
+  
+           <% end %>
+ 
   </div>
-</table>
+
 
 <br>
 <% if user_signed_in? %>
