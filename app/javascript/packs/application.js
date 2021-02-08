@@ -39,3 +39,6 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 window.onscroll = function() { navbar() };
+
+require("trix")
+require("@rails/actiontext")
