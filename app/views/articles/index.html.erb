@@ -13,6 +13,7 @@
     <% @articles.each do |article| %>
       <div>
        <h3> <%= link_to article.title, article %> </h3>
+       <%= article.rich_body %>
       </div>
         <% if user_signed_in? %>
           <%= link_to 'Edytuj', edit_article_path(article), class: "btn" %>
