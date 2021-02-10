@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import { navbar } from '../components/navbar';
+import { appearOnScroll } from '../components/animate';
 import "bootstrap";
 
 
@@ -38,7 +39,7 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-window.onscroll = function() { navbar() };
+window.onscroll = function() { navbar(), appearOnScroll() };
 
 require("trix")
 require("@rails/actiontext")

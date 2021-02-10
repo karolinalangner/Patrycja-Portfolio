@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<div class="header">
 <h2>Blog</h2>
+</div>
 
-  <div class="articles container">
-    <% @articles.each do |article| %>
+  <div class="cards container">
+    <% @articles.sort.reverse.each do |article| %>
       <div class="card-article">
         <% if article.cover.attached? %>
-          <%= cl_image_tag article.cover.key, width: 400, height: 250, crop: :fill %>
+          <%= cl_image_tag article.cover.key, width: 330, height: 250, crop: :fill %>
         <% end %>
-        <h3><%= link_to article.title, article, class:"article-title" %></h3>
-        <small><%= article.created_at.strftime("%d/%m/%Y") %></small>
-      
+        <div class="article-title">
+          <small class="date"><%= article.created_at.strftime("%d/%m/%Y") %></small>
+          <h3><%= link_to article.title, article %></h3>
+        </div>
+        <p class="text"><%= article.tagline %></p>
+        <small><%= link_to "Czytaj >>", article %></small>
       <% if user_signed_in? %>
       <div>
         <%= link_to 'Edytuj', edit_article_path(article) %>
         <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Na pewno?' } %>
       </div>
       <% end %>
-    
-    
       </div>  
-  
-           <% end %>
+    <% end %>
  
   </div>
 
