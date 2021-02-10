@@ -5,10 +5,13 @@
   <div class="form-inputs">
     <%= f.input :title %>
   </div>
- <div class="form-inputs">
+  <div class="form-inputs">
+    <%= f.input :tagline, hint: "Tagline, pojawi sie pod tytulem" %>
+  </div>
+  <div class="form-inputs">
     <%= f.input  :cover, as: :file, hint: "Okladka dla posta" %>
   </div>
- 
+
 
   <!-- insert these three line of code below -->
   <div class="form-inputs">
