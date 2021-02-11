@@ -18,8 +18,9 @@
         <small><%= link_to "Czytaj >>", article %></small>
       <% if user_signed_in? %>
       <div>
-        <%= link_to 'Edytuj', edit_article_path(article) %>
-        <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Na pewno?' } %>
+        <%= link_to 'Edytuj', edit_article_path(article), class:" btn btn-success" %>
+        
+        <%= link_to 'Usuń', article, class:" btn btn-success", method: :delete, data: { confirm: 'Na pewno?' } %>
       </div>
       <% end %>
       </div>  
@@ -27,8 +28,11 @@
  
   </div>
 
-
+  <div class="text-center">
+    <p> <%= will_paginate @articles, :previous_label=> '<<', next_label: '>>' %> </p>
+  </div>
 <br>
 <% if user_signed_in? %>
-  <%= link_to 'Nowy artykuł', new_article_path %>
+<div >
+  <%= link_to 'Nowy artykuł', new_article_path, class:" btn btn-success" %>
 <% end %>
