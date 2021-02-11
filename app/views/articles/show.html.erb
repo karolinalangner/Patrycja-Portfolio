@@ -3,7 +3,7 @@
 <p class="text-center"><small><%= @article.created_at.strftime("%d/%m/%Y") %></small></p>
 
 <h3 class="text-center"><%= @article.title %></h3>
-
+<%= social_share_button_tag(@article.title) %>
 <div class="cover text-center">
   <% if @article.cover.attached? %>
     <%= cl_image_tag @article.cover.key, height: 400, crop: :fill %>
