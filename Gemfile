@@ -34,7 +34,9 @@ gem 'simple_form'
 gem 'mail_form'
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
-
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap4'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'pry-byebug'
