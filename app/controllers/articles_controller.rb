@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { article_path(@article.id, notice: "Article was successfully updated.") }
+        format.html { redirect_to article_path(@article.id, notice: "Article was successfully updated.") }
         format.json { render :show, status: :ok, location: article_path(@article.id) }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+      format.html { redirect_to articles_path, notice: "Article was successfully destroyed." }
       format.json { head :no_content }
     end
   end
