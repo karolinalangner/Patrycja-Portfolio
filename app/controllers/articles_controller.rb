@@ -27,8 +27,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
+        format.html { redirect_to article_path(@article.id, notice: "Article was successfully created.") }
+        format.json { render :show, status: :created, location: article_path(@article.id) }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
@@ -40,8 +40,8 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
-        format.json { render :show, status: :ok, location: @article }
+        format.html { article_path(@article.id, notice: "Article was successfully updated.") }
+        format.json { render :show, status: :ok, location: article_path(@article.id) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
