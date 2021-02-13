@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'kontakt', to: 'pages#kontakt'
   get 'dlaczego_warto_zaufac', to: 'pages#dlaczego_warto_zaufac'
   get 'oferta', to: 'pages#oferta'
-  get 'teksty_reklamowe', to: 'pages#teksty_reklamowe'
+  get 'portfolio/teksty_reklamowe', to: 'pages#teksty_reklamowe'
+  get 'portfolio/artykuly', to: 'pages#artykuly'
 
   resources :contacts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
