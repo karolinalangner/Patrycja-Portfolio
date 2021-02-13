@@ -28,8 +28,8 @@
             Portfolio
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <%= link_to "Kategoria 1", "#", class:"dropdown-item" %>
-            <%= link_to "Kategoria 2", "#", class:"dropdown-item" %>
+            <%= link_to "Teksty reklamowe", portfolio_teksty_reklamowe_path, class:"dropdown-item" %>
+            <%= link_to "Artykuly", portfolio_artykuly_path, class:"dropdown-item" %>
           </div>
         </div>
         <%= link_to "Oferta", oferta_path, class: "btn menu-item" %>
@@ -38,8 +38,14 @@
       </div>
     </div>
   <!--  container -->
+<<<<<<< HEAD
 
   <div class="container" style="padding-top: 10px; margin-top: 280px; height: 80vh;">
+=======
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="container" style="padding-top: 10px; margin-top: 280px; min-height: 50vh;">
+>>>>>>> master
   
   <span></span>
       <%= yield %>
@@ -51,8 +57,8 @@
     <div class="columns">
       <div class="contact mt-1">
         <p>PATRYCJA HAMPELSKA <br>COPYWRITING, EDYTORSTWO I TRANSKRYPCJE </p>
-        <p><i class="fas fa-phone-alt"></i> 0044589854412</p>
-        <p><i class="fas fa-at"></i> abcabc@mail.com</p>
+        <p><i class="fas fa-phone-alt"></i><a href="tel://044589854412"> 0044589854412</a></p>
+        <p><i class="fas fa-at"></i><a href="mailto:abcabc@mail.com"> abcabc@mail.com</a></p>
       </div>
       <div class="page-map mt-1">
         <ul>
@@ -66,13 +72,29 @@
       <div class="page-map mt-1"> 
         <ul>
           <p><u>Portfolio</u></p>
-          <li><%= link_to "Kategoria","#" %></li>
+          <li><%= link_to "Teksty reklamowe", portfolio_teksty_reklamowe_path %></li>
           <li><%= link_to "Kolejna kategoria", "#" %></li>
           <li><%= link_to "Kolejna kategoria", "#" %></li>
         </ul>
       </div>
+      <div class="page-map mt-1"> 
+        <ul>
+          <p><u>Ostatnio na blogu</u></p>
+          <% articles = Article.all %>
+          <% articles.last(3).sort.reverse.each do |article| %>
+          <li><%= link_to article.title, article %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div><p class="text-center p-0 mt-4"><small>&copy; 2021 <%= link_to "Karolina Langner", "https://karolinalangner.me" %></small></p></div>
+    <div>
+      <% if user_signed_in? %>
+        <p class="text-center"><%= link_to "Wyloguj", destroy_user_session_path, method: :delete %> </p>
+        <p class="text-center"><%= link_to "Dodaj referencje", "#" %> </p>
+        <p class="text-center"><%= link_to "Aktualizuj portfolio", "#" %> </p>
+      <% end %>
+    </div>
   </div>
 
   </body>

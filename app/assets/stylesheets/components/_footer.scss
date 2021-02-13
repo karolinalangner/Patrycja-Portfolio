@@ -4,6 +4,7 @@
     padding: 15px 40px 0 40px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
+
     a {
         color: gray;
         font-weight: 100;
@@ -19,7 +20,19 @@
         color: gray;
 
     }
-}   
+
+  
+
+    
+}
+.article-title {
+    min-height: 100px;
+
+}
+   
+.date {
+    font-weight: 100;
+}
 
 .columns {
     display: flex;
