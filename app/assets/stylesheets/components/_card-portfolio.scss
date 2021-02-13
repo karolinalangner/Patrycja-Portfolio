@@ -1,0 +1,18 @@
+.card-portfolio {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    width: 330px;
+    background-color: rgba(255, 255, 255, 0.445);
+    padding: 10px 35px;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.firma {
+    img {
+        height: 95px;
+    }
+}
