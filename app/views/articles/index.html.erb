@@ -1,38 +1,42 @@
 <p id="notice"><%= notice %></p>
+<div class="main-container">
 
-<div class="header">
-<h2>Blog</h2>
-</div>
+  <div class="header left">
+      <h2>Blog</h2>
+  </div>
 
-  <div class="cards container">
-    <% @articles.sort.reverse.each do |article| %>
-      <div class="card-article">
-        <% if article.cover.attached? %>
-          <%= cl_image_tag article.cover.key, width: 330, height: 250, crop: :fill %>
-        <% end %>
-        <div class="article-title">
-          <small class="date"><%= article.created_at.strftime("%d/%m/%Y") %></small>
-          <h3><%= link_to article.title, article %></h3>
+  <div class="right">
+    <div class="cards">
+      <% @articles.sort.reverse.each do |article| %>
+        <div class="card-article">
+          <% if article.cover.attached? %>
+            <%= cl_image_tag article.cover.key, width: 330, height: 250, crop: :fill %>
+          <% end %>
+          <div class="article-title">
+            <small class="date"><%= article.created_at.strftime("%d/%m/%Y") %></small>
+            <h3><%= link_to article.title, article %></h3>
+          </div>
+          <p class="text"><%= article.tagline %></p>
+          <small><%= link_to "Czytaj >>", article %></small>
+        <% if user_signed_in? %>
+        <div>
+          <%= link_to 'Edytuj', edit_article_path(article), class:" btn btn-success" %>
+          
+          <%= link_to 'Usuń', article, class:" btn btn-success", method: :delete, data: { confirm: 'Na pewno?' } %>
         </div>
-        <p class="text"><%= article.tagline %></p>
-        <small><%= link_to "Czytaj >>", article %></small>
-      <% if user_signed_in? %>
-      <div>
-        <%= link_to 'Edytuj', edit_article_path(article), class:" btn btn-success" %>
-        
-        <%= link_to 'Usuń', article, class:" btn btn-success", method: :delete, data: { confirm: 'Na pewno?' } %>
-      </div>
+        <% end %>
+        </div>  
       <% end %>
-      </div>  
-    <% end %>
- 
-  </div>
+  
+    </div>
 
-  <div class="text-center">
-    <p> <%= will_paginate @articles, :previous_label=> '<<', next_label: '>>' %> </p>
+    <div class="text-center">
+      <p> <%= will_paginate @articles, :previous_label=> '<<', next_label: '>>' %> </p>
+    </div>
   </div>
-<br>
-<% if user_signed_in? %>
-<div >
-  <%= link_to 'Nowy artykuł', new_article_path, class:" btn btn-success" %>
-<% end %>
+</div>
+  <br>
+  <% if user_signed_in? %>
+  <div >
+    <%= link_to 'Nowy artykuł', new_article_path, class:" btn btn-success" %>
+  <% end %>

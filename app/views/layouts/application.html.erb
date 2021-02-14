@@ -14,8 +14,9 @@
   <body>
     <!--NAVBAR -->
     <div class="navbar" id="navbar">
-
-      <%= link_to(image_tag("logo.png", crop: :fill, class: "logo"), root_path) %>
+      <div class="logo">
+       <%= link_to(image_tag("logo.png", crop: :fill, class:"logoimg"), root_path) %>
+      </div>
       <div class="social">
         <a href="#"><i class="fab fa-linkedin"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -38,14 +39,9 @@
       </div>
     </div>
   <!--  container -->
-<<<<<<< HEAD
-
-  <div class="container" style="padding-top: 10px; margin-top: 280px; height: 80vh;">
-=======
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div class="container" style="padding-top: 10px; margin-top: 280px; min-height: 50vh;">
->>>>>>> master
+  <div class="container" style="">
   
   <span></span>
       <%= yield %>

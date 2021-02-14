@@ -12,7 +12,7 @@
 
 .navbar img:hover {
   transform: scale(1.1);
-  transition: 0.5s;
+  transition: transform 500ms ease-in;
 }
 
 .navbar-menu {
@@ -21,7 +21,7 @@
   justify-content: space-around;
 }
 
-.navbar-item, {
+.navbar-item {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
@@ -50,11 +50,46 @@
 }
 
 .dropdown-menu {
-  background: transparent;
+  background: white;
   border: none;
  
     a {
       font-weight: 100;
     }
 }
+@media only screen and (max-width: 580px) {
+  .navbar {
 
+      padding: 0px !important;
+      height: 10% !important;
+      flex-direction: row!important;
+      background: white!important;
+      
+      .logo {
+      height: 100%!important;
+
+        
+        img{
+          height: 100%!important;
+
+        }
+      }
+      .social a {
+        font-size: 15px!important;
+      }
+      .navbar-menu {
+        width: 100%!important;
+        background-color: white;
+      }
+
+      .menu-item {
+        font-size: 10px!important;
+        padding: 10px 5px!important;
+      }
+      .dropdown-item a {
+        font-size: 10px;
+      }
+    
+  
+  }
+}
