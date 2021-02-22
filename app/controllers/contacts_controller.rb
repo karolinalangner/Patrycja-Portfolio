@@ -1,25 +1,18 @@
 class ContactsController < ApplicationController
-    before_action :contact_params, only: [:create]
 
-    def index
-      @contact = ContactForm.new
+  def new 
+    @contact = Contact.new
+  end
+
+  def create
+    @contact = Contact.new(params[:contact])
+    @contact.request = request
+    if @contact.deliver
+      flash.now[:error] = nil
+  redirect_to kontakt_path, notice: 'Wiadomość została wysłana'
+    else
+      flash.now[:error] = 'Nie udało się wysłać wiadomości'
+      render :new
     end
-  
-    def create
-      @contact = ContactForm.new(params[:contact_form])
-      @contact.request = request
-      if @contact.deliver
-        flash.now[:notice] = 'Thank you for your message!'
-        render :index
-      else
-        flash.now[:error] = 'Cannot send message.'
-        render :index
-      end
-    end
-  
-    private
-    def contact_params
-      params.require(:contact_form).permit(:name, :email, :message, :nickname, :captcha)
-    end    
- 
+  end
 end
