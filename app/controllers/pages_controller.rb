@@ -3,7 +3,8 @@ class PagesController < ApplicationController
 
   end
 
-  def o_mnie
+  def kontakt
+    @contact = Contact.new
   end
 
   def dlaczego_warto_zaufac
