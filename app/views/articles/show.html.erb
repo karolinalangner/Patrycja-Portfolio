@@ -3,14 +3,29 @@
 <p class="text-center"><small><%= @article.created_at.strftime("%d/%m/%Y") %></small></p>
 
 <h3 class="text-center "><%= @article.title %></h3>
-<%= social_share_button_tag(@article.title) %>
+
 <div class="cover text-center">
   <% if @article.cover.attached? %>
     <%= cl_image_tag @article.cover.key, height: 400, crop: :fill %>
   <% end %>
 </div>
 <p class="text text-center"><%= @article.rich_body %> </p>
+<div class="share-links">
+  <p class="text"><small>Podziel się:</small></p>
+  <a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@article, {only_path: false}]) %>',
+    '_blank', 'width=800, height=500, top=200, left=300');void(0);" class="pointer";><i style="color:#0C86EE; font-size:22px;"class="fab fa-facebook-square"></i></a>
+  <%= twitter_button %>
+  <%= linkedin_button %>
+ <script language="javascript">
+        function emailCurrentPage(){
+            window.location.href="mailto:?subject="+document.title+"&body="+escape(window.location.href);
+        }
+    </script>
+    <a href="javascript:emailCurrentPage()"><i style="font-size:22px;"class="fas fa-envelope-square"></i></a>
+</div>
+<% if user_signed_in? %>
 <div>
   <%= link_to 'Edit', edit_article_path(@article) %> |
   <%= link_to 'Back', articles_path %>
 </div>
+<% end %>
