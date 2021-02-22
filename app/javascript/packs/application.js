@@ -25,10 +25,7 @@ require("channels")
 // External imports
 import { navbar } from '../components/navbar';
 import { appearOnScroll } from '../components/animate';
-import "bootstrap";
-
-
-
+import "bootstrap"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

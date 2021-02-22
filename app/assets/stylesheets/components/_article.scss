@@ -1,0 +1,11 @@
+.share-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 23%;
+    align-items: center;
+
+    button {
+        line-height: 18px!important;
+    }
+}

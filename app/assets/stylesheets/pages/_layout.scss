@@ -25,7 +25,13 @@
 .bw {
     margin: 25px 0;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);    }
+    filter: grayscale(100%);    
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 580px) {
     .main-container {

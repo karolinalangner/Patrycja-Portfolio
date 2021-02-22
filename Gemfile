@@ -38,6 +38,7 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap4'
 gem 'will_paginate-bootstrap'
 gem 'social-share-button'
+gem 'shareable'
 
 group :development, :test do
   gem 'pry-byebug'
