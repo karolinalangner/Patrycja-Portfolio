@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   redirect_to kontakt_path, notice: 'Wiadomość została wysłana'
     else
       flash.now[:error] = 'Nie udało się wysłać wiadomości'
-      render :new
+      render 'pages/kontakt'
     end
   end
 end
