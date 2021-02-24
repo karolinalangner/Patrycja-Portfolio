@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'kontakt', to: 'pages#kontakt'
   get 'dlaczego_warto_zaufac', to: 'pages#dlaczego_warto_zaufac'
   get 'oferta', to: 'pages#oferta'
+  get 'blog', to: 'pages#blog'
   get 'portfolio/teksty_reklamowe', to: 'pages#teksty_reklamowe'
   get 'portfolio/artykuly', to: 'pages#artykuly'
 
