@@ -15,5 +15,10 @@ class PagesController < ApplicationController
   def teksty_reklamowe
     #pokaz wszystkie teksty (Tekst.all) gdzie kategoria = "reklama"
   end
+
+  def blog
+    @articles = Article.paginate(page: params[:page])
+  end
+
   
 end

@@ -11,9 +11,15 @@
 </div>
 <p class="text text-center"><%= @article.rich_body %> </p>
 <div class="share-links">
-  <p class="text"><small>Podziel się:</small></p>
-  <a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@article, {only_path: false}]) %>',
-    '_blank', 'width=800, height=500, top=200, left=300');void(0);" class="pointer";><i style="color:#0C86EE; font-size:22px;"class="fab fa-facebook-square"></i></a>
+  <p class="text"><small>Podziel się:</small><br><br></p>
+ <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0" nonce="lS7pqvWt">
+    const fbButton = document.querySelector('.fb-share-button')
+    fbButton.addEventListener("click", (event) => {
+      event.currentTarget.data-layout.value = window.location.href;
+     });
+  </script>
+  <div class="fb-share-button" data-href="" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Udostępnij</a></div>
   <%= twitter_button %>
   <%= linkedin_button %>
  <script language="javascript">
