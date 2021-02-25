@@ -57,30 +57,30 @@
         <p><i class="fas fa-at"></i><a href="mailto:abcabc@mail.com"> abcabc@mail.com</a></p>
       </div>
       <div class="page-map mt-1">
-        <ul>
+        <ul><small>
           <p><u>Na skróty</u></p>
           <li><%= link_to "O mnie", o_mnie_path %></li>
           <li><%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path %></li>
           <li><%= link_to "Oferta", oferta_path %></li>
           <li><%= link_to "Blog", articles_path %></li>
-        </ul>
+        </small></ul>
       </div>
       <div class="page-map mt-1"> 
-        <ul>
+        <ul><small>
           <p><u>Portfolio</u></p>
           <li><%= link_to "Teksty reklamowe", portfolio_teksty_reklamowe_path %></li>
           <li><%= link_to "Kolejna kategoria", "#" %></li>
           <li><%= link_to "Kolejna kategoria", "#" %></li>
-        </ul>
+        </small></ul>
       </div>
       <div class="page-map mt-1"> 
-        <ul>
+        <ul><small>
           <p><u>Ostatnio na blogu</u></p>
           <% articles = Article.all %>
           <% articles.last(3).sort.reverse.each do |article| %>
           <li><%= link_to article.title, article %></li>
           <% end %>
-        </ul>
+        </small></ul>
       </div>
     </div>
     <div><p class="text-center p-0 mt-2"><small>&copy; 2021 <%= link_to "Karolina Langner", "https://karolinalangner.me" %></small></p></div>
