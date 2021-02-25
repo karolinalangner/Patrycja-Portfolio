@@ -86,8 +86,12 @@
         font-size: 10px!important;
         padding: 10px 5px!important;
       }
-      .dropdown-item a {
+      .dropdown-menu {
         font-size: 10px;
+
+        a {
+          font-weight: 400;
+        }
       }
     
   

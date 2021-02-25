@@ -1,0 +1,8 @@
+.onload-fade-in {
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+  }
+  
+  .onload-fade-in.appear {
+    opacity: 1;
+  }
