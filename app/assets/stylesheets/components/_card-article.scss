@@ -20,17 +20,19 @@
     }
 
     .date {
-        margin-top: 10px;
-    }
-    hr {
-        margin: 10px 71.5px;
+        margin: 8px 0;
     }
     .tagline {
         display: flex;
         align-items: center;
         min-height:90px;
     }
-
+    h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
     a:hover {
 
         text-decoration: none;
