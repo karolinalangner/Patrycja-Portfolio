@@ -1,5 +1,5 @@
 
-  <p id="notice"><%= notice %></p>
+ 
 
 <div class="main-container">
   <div class="header left">
@@ -7,7 +7,9 @@
   </div>
 
   <div class="right">
+  <p id="notice"><%= notice %></p>
     <div class="cards">
+     
       <% @articles.sort.reverse.each do |article| %>
         <div class="card-article">
           <% if article.cover.attached? %>
@@ -15,10 +17,15 @@
           
           <% end %>
           <div class="article-title">
-            <small class="date"><%= article.created_at.strftime("%d/%m/%Y") %></small>
+            <div class="date">
+              <small><%= article.created_at.strftime("%d/%m/%Y") %></small>
+            </div>
+            <hr style="height:0px;border-width:1px;width:45%;color:gray;background-color:gray">
             <h3><%= link_to article.title, article %></h3>
           </div>
-          <p class="text"><%= article.tagline %></p>
+          <div class="tagline">
+            <p class="text"><%= article.tagline %></p>
+          </div>
           <small><%= link_to "Czytaj >>", article %></small>
         <% if user_signed_in? %>
         <div>
