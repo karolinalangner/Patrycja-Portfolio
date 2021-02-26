@@ -24,7 +24,7 @@
       <div class="navbar-menu" >
         <%= link_to "O mnie", o_mnie_path, class: "btn menu-item" %>
         <%= link_to "Dlaczego warto mi zaufać?", dlaczego_warto_zaufac_path, class: "btn menu-item" %>
-        <div class="dropdown">
+        <div class="dropdown" style="display: none;">
           <button class="btn menu-item dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Portfolio
           </button>
@@ -65,7 +65,7 @@
           <li><%= link_to "Blog", articles_path %></li>
         </small></ul>
       </div>
-      <div class="page-map mt-1"> 
+      <div class="page-map mt-1 d-none"> 
         <ul><small>
           <p><u>Portfolio</u></p>
           <li><%= link_to "Teksty reklamowe", portfolio_teksty_reklamowe_path %></li>
