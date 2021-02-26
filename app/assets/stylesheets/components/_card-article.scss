@@ -6,7 +6,7 @@
     min-height: 480px;
     width: 330px;
     background-color: rgb(255, 255, 255);
-    padding: 10px 35px;
+    padding: 0 35px 10px;
     margin: 10px 5px;
     text-align: center;
     box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
@@ -27,6 +27,6 @@
 }
 
 .card-article:hover {
-    transform: scale(1.1);
+    transform: scale(1.051);
     transition: transform 300ms ease-in-out;
 }
