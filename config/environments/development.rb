@@ -3,12 +3,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
-  user_name:      'apikey',
-  password:        ENV['SENDGRID_API_KEY'],
-  domain:         'localhost:3000',
-  address:        "smtp.sendgrid.net",
-  port:            587,
-  authentication: :plain
+    :address        => 'smtp.gmail.com',
+    :domain         => 'mail.google.com',
+    :port           => 587,
+    :user_name      => 'karolinalangner1@gmail.com',
+    :password       => ENV['GMAIL'],
+    :authentication => :plain,
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
