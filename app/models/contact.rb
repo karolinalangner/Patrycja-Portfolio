@@ -7,7 +7,7 @@ class Contact < MailForm::Base
     def headers
       {
         :subject => "Contact Form",
-        :to => "hello@karolinalangner.me",
+        :to => "karolinalangner1@gmail.com",
         :from => %("#{name}" <#{email}>)
       }
     end
