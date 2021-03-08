@@ -87,7 +87,7 @@
     <div>
       <% if user_signed_in? %>
         <p class="text-center"><%= link_to "Wyloguj", destroy_user_session_path, method: :delete %> </p>
-        <p class="text-center"><%= link_to "Dodaj referencje", "#" %> </p>
+        <p class="text-center"><%= link_to "Dodaj referencje", new_testimonial_path %> </p>
         <p class="text-center"><%= link_to "Aktualizuj portfolio", "#" %> </p>
       <% end %>
     </div>

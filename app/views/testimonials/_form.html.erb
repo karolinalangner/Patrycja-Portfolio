@@ -1,0 +1,22 @@
+<div style="margin: auto; width:85%;">
+<p><small>Referencje wyświetlą się na stronie: <%= link_to "Dlaczego warto mi zaufać", dlaczego_warto_zaufac_path %></small> </p>
+    <%= simple_form_for(@testimonial) do |f| %>
+    <div class="form-inputs">
+        <%= f.input :author, label: "Autor" %>
+    </div>
+    <div class="form-inputs">
+        <%= f.input :company, label: "Firma" %>
+    </div>
+    <div class="form-inputs">
+        <%= f.input :link, label: "Link do strony firmy" %>
+    </div>
+    <div class="form-inputs">
+        <%= f.input  :content, label: "Treść", required: true %>
+    </div>
+
+    <div class="form-actions">
+        <br><br>
+        <%= f.button :submit, class:"btn btn-primary" %>
+    </div>
+    <% end %>
+</div>
