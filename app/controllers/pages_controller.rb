@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def dlaczego_warto_zaufac
+    @testimonials = Testimonial.all
   end
   
   # Portfolio kategorie

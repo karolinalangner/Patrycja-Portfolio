@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'testimonials/index'
+  get 'testimonials/new'
+  get 'testimonials/create'
   devise_for :users
   root to: 'pages#home'
   
   resources :articles
+  resources :testimonials
   resources :contacts, only: [:new, :create]
   get 'o_mnie', to: 'pages#o_mnie'
   get 'kontakt', to: 'pages#kontakt'
